@@ -1,0 +1,6 @@
+<%= form_for @user, url: user_path(@user), method: 'put' do |f| %>
+	<%= f.label :first_name %><%= f.text_field :first_name, placeholder: "First name" %>
+	<%= f.label :last_name %><%= f.text_field :last_name, placeholder: "Last name" %>
+	<%= f.label :username %><%= f.text_field :username, placeholder: "Enter your username" %>
+	<%= f.submit "Sign-up" %>
+<% end %>
