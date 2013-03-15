@@ -1,12 +1,19 @@
-<div class="container">
-	<h2>Sign Up</h2>
-	<%= form_for @user do |f| %>
-		<%= f.label :first_name %><%= f.text_field :first_name, placeholder: "First name" %>
-		<%= f.label :last_name %><%= f.text_field :last_name, placeholder: "Last name" %>
-	  <%= f.label :email %><%= f.email_field :email, placeholder: "Email" %>
-		<%= f.label :username %><%= f.text_field :username, placeholder: "Enter your username" %>
-		<%= f.label :password %><%= f.password_field :password, placeholder: "Enter your password" %>
-		<%= f.label :password_confirmation %><%= f.password_field :password_confirmation, placeholder: "Confirm your password" %>
-		<p><%= f.submit "Sign-up" %></p>
-	<% end %>
-</div>
+<h2>Sign Up</h2>
+
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= f.label :first_name %><%= f.text_field :first_name, placeholder: "First name" %>
+  <%= f.label :last_name %><%= f.text_field :last_name, placeholder: "Last name" %>
+  <%= f.label :email %><%= f.email_field :email, placeholder: "Email" %>
+  <%= f.label :username %><%= f.text_field :username, placeholder: "Enter your username" %>
+  <%= f.label :password %><%= f.password_field :password, placeholder: "Enter your password" %>
+  <%= f.label :password_confirmation %><%= f.password_field :password_confirmation, placeholder: "Confirm your password" %>
+  <p><%= f.submit "Sign-up" %></p>
+<% end %>
