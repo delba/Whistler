@@ -13,4 +13,11 @@ class SessionsController < ApplicationController
       render :new
     end
   end
+
+  def destroy
+    reset_session
+
+    # TODO change
+    render nothing: true 
+  end
 end
