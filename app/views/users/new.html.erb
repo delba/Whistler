@@ -2,11 +2,7 @@
 
 <%= form_for @user, url: signup_path do |f| %>
   <% if @user.errors.any? %>
-    <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
+    <p><%= @user.errors.full_messages.to_sentence.capitalize %></p>
   <% end %>
 
   <%= f.label :first_name %><%= f.text_field :first_name, placeholder: "First name" %>
