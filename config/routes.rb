@@ -7,5 +7,4 @@ Whistler::Application.routes.draw do
   delete 'logout' => 'sessions#destroy'
 
   get 'profile/:username' => 'users#show', as: :user
-  post 'users' => 'users#create', as: :users
 end
