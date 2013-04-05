@@ -7,11 +7,35 @@
     <p><%= @user.errors.full_messages.to_sentence.capitalize %></p>
   <% end %>
 
-  <%= f.label :first_name %><%= f.text_field :first_name, placeholder: "First name" %>
-  <%= f.label :last_name %><%= f.text_field :last_name, placeholder: "Last name" %>
+  <div class="field">
+    <%= f.label :first_name %><%= f.text_field :first_name, placeholder: "First name" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name, placeholder: "Last name" %>
+  </div>
+
+  <div class="field">
   <%= f.label :email %><%= f.email_field :email, placeholder: "Email" %>
-  <%= f.label :username %><%= f.text_field :username, placeholder: "Enter your username" %>
-  <%= f.label :password %><%= f.password_field :password, placeholder: "Enter your password" %>
-  <%= f.label :password_confirmation %><%= f.password_field :password_confirmation, placeholder: "Confirm your password" %>
-  <p><%= f.submit "Sign-up" %></p>
+  </div>
+
+  <div class="field">
+    <%= f.label :username %>
+    <%= f.text_field :username, placeholder: "Enter your username" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.password_field :password, placeholder: "Enter your password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, placeholder: "Confirm your password" %>
+  </div>
+
+  <div class="actions">
+     <%= f.submit "Sign Up" %>
+  </div>
 <% end %>
