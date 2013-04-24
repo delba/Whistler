@@ -8,8 +8,10 @@ class User < ActiveRecord::Base
                     email: true
 
   def self.find_by_login(login)
-    where('lower(email) = :login OR lower(username) = :login',
-          { login: login.downcase }).first
+    where(
+      "lower(email) = :login OR lower(username) = :login",
+      login: login.downcase
+    ).first
   end
 
   def full_name
